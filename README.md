@@ -29,6 +29,18 @@ VITE_EMAILJS_PUBLIC_KEY=...
 npm run dev
 ```
 
+## Link theo khách mời (ví dụ: /vanquynh)
+
+Thiệp sẽ tự lấy khách mời theo đường dẫn URL:
+
+- `/vanquynh` → "Vân Quỳnh"
+- `/thaoquynh` → "Thảo Quỳnh"
+- `/phuongmai` → "Phương Mai"
+
+Bạn có thể thêm/bớt khách mời trong [src/lib/details.ts](src/lib/details.ts) ở `guestList`.
+
+Lưu ý khi deploy: nếu bạn host dạng static (SPA) thì cần cấu hình **rewrite** để mọi route (ví dụ `/vanquynh`) đều trả về `index.html`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

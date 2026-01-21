@@ -132,7 +132,7 @@ export function GuestInput({ onGuestNameChange }: GuestInputProps) {
                     <input
                       id="guestName"
                       className="w-full bg-transparent py-1 text-sm text-navy-900 placeholder:text-navy-900/35 focus:outline-none"
-                      placeholder="Ví dụ: Chúc bạn hạnh phúc và thành công!"
+                      placeholder="Ví dụ: Nguyễn Văn A - Chúc bạn thành công!"
                       value={name}
                       onChange={(e) => {
                         setName(e.target.value);

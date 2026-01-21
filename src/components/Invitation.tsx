@@ -6,7 +6,11 @@ import { Reveal } from "./Reveal";
  * Formal invitation content.
  * Icons are intentionally minimal to keep the aesthetic clean.
  */
-export function Invitation() {
+type InvitationProps = {
+  guestName?: string;
+};
+
+export function Invitation({ guestName }: InvitationProps) {
   return (
     <section id="invitation" className="relative py-16 sm:py-20">
       <div className="container-page">
@@ -37,7 +41,7 @@ export function Invitation() {
                     <p>
                       Thân mời{" "}
                       <span className="inline-flex items-center gap-2 rounded-full bg-gold-50 px-3 py-1 font-semibold text-navy-900 ring-1 ring-gold-100">
-                        {invitationDetails.khachmoi}
+                        {guestName ?? invitationDetails.khachmoi}
                       </span>{" "}
                       đến tham dự buổi lễ tốt nghiệp.
                     </p>
@@ -57,7 +61,7 @@ export function Invitation() {
                             LỜI NHẮN
                           </div>
                           <div className="mt-1 text-sm text-navy-900/75">
-                            “Không đến thì nghỉ chơi nha con lợn.”
+                            “Rất mong bạn sắp xếp thời gian đến tham dự và chung vui cùng tôi trong buổi lễ tốt nghiệp.”
                           </div>
                         </div>
                       </div>

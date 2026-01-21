@@ -1,16 +1,25 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { Hero } from "./components/Hero";
 import { Invitation } from "./components/Invitation";
 import { GuestInput } from "./components/GuestInput";
 import { Timeline } from "./components/Timeline";
 import { MusicToggle } from "./components/MusicToggle";
-import { invitationDetails } from "./lib/details";
+import { getGuestNameFromPathname, invitationDetails } from "./lib/details";
 
 function App() {
   const onViewInvitation = useCallback(() => {
     const el = document.getElementById("invitation");
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
+
+  const guestName = useMemo(
+    () =>
+      getGuestNameFromPathname(
+        window.location.pathname,
+        import.meta.env.BASE_URL,
+      ),
+    [],
+  );
 
   return (
     <div className="min-h-dvh">
@@ -38,7 +47,7 @@ function App() {
 
       <main>
         <Hero onViewInvitation={onViewInvitation} />
-        <Invitation />
+        <Invitation guestName={guestName} />
         <GuestInput />
         <Timeline />
       </main>
