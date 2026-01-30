@@ -21,6 +21,7 @@ export const guestList = [
   { name: "Minh Hiền", slug: "minhhien" },
   { name: "Anh Việt", slug: "anhviet" },
   { name: "Mọi người", slug: "moinguoi" },
+  { name: "Phương Linh & Anh Công", slug: "phuonglinh" },
 ] as const;
 
 function normalizeSlug(input: string): string {
